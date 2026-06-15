@@ -1,0 +1,60 @@
+* {
+  font-family: "Monocraft", monospace !important;
+}
+
+body {
+  --bg-transparency: rgba(0, 0, 0, 0.7);
+  --blur-amount: 15px;
+}
+
+.workspace,
+.workspace-split,
+.workspace-ribbon,
+.workspace-tabs,
+.workspace-tab-container,
+.workspace-leaf,
+.workspace-leaf-content,
+.view-content,
+.markdown-source-view,
+.markdown-preview-view,
+.markdown-reading-view,
+.cm-s-obsidian,
+.workspace-drawer,
+.workspace-drawer-inner,
+.workspace-tab-header-container,
+.workspace-tab-header,
+.workspace-tab-header-inner,
+.titlebar,
+.status-bar {
+  background-color: transparent !important;
+}
+
+.workspace,
+.workspace-split,
+.workspace-leaf,
+.workspace-leaf-content,
+.view-content,
+.markdown-source-view,
+.markdown-preview-view,
+.markdown-reading-view,
+.cm-s-obsidian {
+  backdrop-filter: blur(var(--blur-amount)) !important;
+}
+
+.theme-dark {
+  --background-primary: var(--bg-transparency) !important;
+  --background-secondary: var(--bg-transparency) !important;
+  --background-primary-alt: var(--bg-transparency) !important;
+  --background-secondary-alt: var(--bg-transparency) !important;
+  --background-modifier-border: transparent !important;
+  --background-modifier-form-field: transparent !important;
+  --background-modifier-form-field-highlighted: transparent !important;
+  --background-modifier-box-shadow: transparent !important;
+  --background-modifier-success: transparent !important;
+  --background-modifier-error: transparent !important;
+  --background-modifier-error-hover: transparent !important;
+  --background-modifier-cover: transparent !important;
+  --background-modifier-message: transparent !important;
+  --titlebar-background: transparent !important;
+  --titlebar-background-focused: transparent !important;
+}

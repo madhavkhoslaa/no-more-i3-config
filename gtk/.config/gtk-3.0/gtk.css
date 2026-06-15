@@ -1,0 +1,15 @@
+.background {
+  background-color: rgba(30, 30, 46, 0.8) !important;
+}
+
+.titlebar {
+  background-color: rgba(24, 24, 37, 0.85) !important;
+}
+
+.sidebar {
+  background-color: rgba(30, 30, 46, 0.75) !important;
+}
+
+.toolbar {
+  background-color: rgba(24, 24, 37, 0.85) !important;
+}
