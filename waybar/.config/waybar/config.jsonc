@@ -1,0 +1,119 @@
+{
+    "layer": "top",
+    "position": "bottom",
+    "height": 16,
+    "modules-left": ["custom/ws1", "custom/ws2", "custom/ws3", "custom/ws4", "custom/ws5"],
+    "modules-center": ["mpris"],
+    "modules-right": ["pulseaudio", "backlight", "cpu", "temperature", "network", "bluetooth", "battery", "custom/clock", "custom/power"],
+
+    "custom/ws1": {
+        "exec": "/home/vroomer/.config/waybar/ws.sh 1",
+        "exec-if": "/home/vroomer/.config/waybar/ws-exists.sh 1",
+        "interval": 0.2,
+        "on-click": "hyprctl dispatch 'hl.dsp.focus({workspace=1})'",
+        "return-type": "json"
+    },
+    "custom/ws2": {
+        "exec": "/home/vroomer/.config/waybar/ws.sh 2",
+        "exec-if": "/home/vroomer/.config/waybar/ws-exists.sh 2",
+        "interval": 0.2,
+        "on-click": "hyprctl dispatch 'hl.dsp.focus({workspace=2})'",
+        "return-type": "json"
+    },
+    "custom/ws3": {
+        "exec": "/home/vroomer/.config/waybar/ws.sh 3",
+        "exec-if": "/home/vroomer/.config/waybar/ws-exists.sh 3",
+        "interval": 0.2,
+        "on-click": "hyprctl dispatch 'hl.dsp.focus({workspace=3})'",
+        "return-type": "json"
+    },
+    "custom/ws4": {
+        "exec": "/home/vroomer/.config/waybar/ws.sh 4",
+        "exec-if": "/home/vroomer/.config/waybar/ws-exists.sh 4",
+        "interval": 0.2,
+        "on-click": "hyprctl dispatch 'hl.dsp.focus({workspace=4})'",
+        "return-type": "json"
+    },
+    "custom/ws5": {
+        "exec": "/home/vroomer/.config/waybar/ws.sh 5",
+        "exec-if": "/home/vroomer/.config/waybar/ws-exists.sh 5",
+        "interval": 0.2,
+        "on-click": "hyprctl dispatch 'hl.dsp.focus({workspace=5})'",
+        "return-type": "json"
+    },
+
+    "pulseaudio": {
+        "format": " {volume}%",
+        "format-muted": " off",
+        "on-click": "pamixer -t",
+        "on-scroll-up": "pamixer -i 5",
+        "on-scroll-down": "pamixer -d 5"
+    },
+
+    "backlight": {
+        "format": " {percent}%",
+        "on-scroll-up": "brightnessctl s +5%",
+        "on-scroll-down": "brightnessctl s 5%-"
+    },
+
+    "cpu": {
+        "format": " {usage}%",
+        "interval": 2
+    },
+
+    "temperature": {
+        "thermal-zone": 0,
+        "format": " {temperatureC}°C",
+        "interval": 5
+    },
+
+    "network": {
+        "format-wifi": " {essid}",
+        "format-ethernet": " eth",
+        "format-disconnected": " off",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+        "on-click": "nm-connection-editor"
+    },
+
+    "bluetooth": {
+        "format": " {controller_alias}",
+        "format-off": " off",
+        "format-disabled": "",
+        "format-connected": " {device_alias}",
+        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "on-click": "bash -c 'bluetoothctl show | grep -q \"Powered: yes\" && bluetoothctl power off || bluetoothctl power on'"
+    },
+
+    "battery": {
+        "format": "{capacity}%",
+        "format-charging": "+{capacity}%",
+        "format-warning": "{capacity}%",
+        "format-critical": "{capacity}%",
+        "format-full": "FUL",
+        "warning-threshold": 60,
+        "critical-threshold": 30,
+        "tooltip-format": "{capacity}% ({power}W)"
+    },
+
+    "custom/clock": {
+        "exec": "/home/vroomer/.config/waybar/clock.sh",
+        "interval": 1,
+        "return-type": "json",
+        "on-click": "/home/vroomer/.config/waybar/clock-notify.sh"
+    },
+
+    "mpris": {
+        "format": "{player_icon} {artist} - {title}",
+        "format-paused": "{status_icon} {artist} - {title}",
+        "on-click": "playerctl play-pause",
+        "on-scroll-up": "playerctl next",
+        "on-scroll-down": "playerctl previous"
+    },
+
+    "custom/power": {
+        "format": "⏻",
+        "on-click": "/home/vroomer/.config/waybar/powermenu.sh",
+        "tooltip": false
+    }
+}

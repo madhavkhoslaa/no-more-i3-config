@@ -1,0 +1,108 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "Monocraft", "Symbols Nerd Font", sans-serif;
+    font-size: 11px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgba(30, 30, 30, 0.95);
+    color: #ffffff;
+    border-bottom: none;
+}
+
+#custom-ws1, #custom-ws2, #custom-ws3, #custom-ws4, #custom-ws5 {
+    padding: 0 1px;
+    margin: 0;
+    color: #888888;
+}
+
+#custom-ws1.active, #custom-ws2.active, #custom-ws3.active, #custom-ws4.active, #custom-ws5.active {
+    color: #ffffff;
+}
+
+#taskbar button {
+    padding: 0 5px;
+    color: #cccccc;
+}
+
+#taskbar button.active {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+}
+
+#pulseaudio, #backlight, #cpu, #temperature, #network, #bluetooth, #battery, #custom-clock, #custom-power {
+    padding: 0 3px;
+    margin: 0;
+}
+
+#pulseaudio {
+    color: #a6e3a1;
+}
+
+#backlight {
+    color: #f9e2af;
+}
+
+#cpu {
+    color: #89dceb;
+}
+
+#temperature {
+    color: #fab387;
+}
+
+#network {
+    color: #89b4fa;
+}
+
+#bluetooth {
+    color: #cba6f7;
+}
+
+#battery {
+    color: #a6e3a1;
+}
+
+#battery.warning {
+    color: #fab387;
+}
+
+#battery.critical {
+    color: #f38ba8;
+}
+
+#battery.charging {
+    color: #f9e2af;
+}
+
+#custom-clock {
+    color: #cdd6f4;
+}
+
+#custom-power {
+    color: #f38ba8;
+    padding: 0 5px;
+}
+
+#network.disconnected {
+    color: #585b70;
+}
+
+#bluetooth.off, #bluetooth.disabled {
+    color: #585b70;
+}
+
+#pulseaudio.muted {
+    color: #585b70;
+}
+
+#mpris {
+    padding: 0 3px;
+    color: #cdd6f4;
+}
+
+#mpris.paused {
+    color: #585b70;
+}
