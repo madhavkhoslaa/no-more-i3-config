@@ -50,7 +50,7 @@ local menu        = "hyprlauncher"
 --
 hl.on("hyprland.start", function ()
   hl.exec_cmd("/home/vroomer/.config/hypr/start-waybar.sh")
-  hl.exec_cmd("killall swaybg 2>/dev/null; swaybg -i /home/vroomer/Downloads/chess-gate.jpeg -m fill &")
+  hl.exec_cmd("killall swaybg 2>/dev/null; setsid -f swaybg -i /home/vroomer/Downloads/12259305.png -m fill")
 end)
 
 
@@ -114,8 +114,8 @@ hl.config({
         rounding_power = 0,
 
         -- Change transparency of focused and unfocused windows
-        active_opacity   = 1.0,
-        inactive_opacity = 1.0,
+        active_opacity   = 0.93,
+        inactive_opacity = 0.85,
 
         shadow = {
             enabled      = true,
@@ -126,9 +126,13 @@ hl.config({
 
         blur = {
             enabled   = true,
-            size      = 3,
-            passes    = 1,
+            size      = 6,
+            passes    = 3,
             vibrancy  = 0.1696,
+            new_optimizations = true,
+            noise     = 0.01,
+            contrast  = 0.8,
+            brightness = 0.9,
         },
     },
 
@@ -210,7 +214,7 @@ hl.config({
 
 hl.config({
     misc = {
-        force_default_wallpaper = 1,
+        force_default_wallpaper = 0,
         disable_hyprland_logo   = true,
     },
 })

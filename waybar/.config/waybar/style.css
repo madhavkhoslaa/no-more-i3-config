@@ -7,29 +7,29 @@
 }
 
 window#waybar {
-    background: rgba(30, 30, 30, 0.95);
-    color: #ffffff;
+    background: rgba(30, 30, 46, 0.85);
+    color: #cdd6f4;
     border-bottom: none;
 }
 
 #custom-ws1, #custom-ws2, #custom-ws3, #custom-ws4, #custom-ws5 {
     padding: 0 1px;
     margin: 0;
-    color: #888888;
+    color: #585b70;
 }
 
 #custom-ws1.active, #custom-ws2.active, #custom-ws3.active, #custom-ws4.active, #custom-ws5.active {
-    color: #ffffff;
+    color: #cba6f7;
 }
 
 #taskbar button {
     padding: 0 5px;
-    color: #cccccc;
+    color: #a6adc8;
 }
 
 #taskbar button.active {
-    background: rgba(255, 255, 255, 0.1);
-    color: #ffffff;
+    background: rgba(203, 166, 247, 0.15);
+    color: #cdd6f4;
 }
 
 #pulseaudio, #backlight, #cpu, #temperature, #network, #bluetooth, #battery, #custom-clock, #custom-power {
