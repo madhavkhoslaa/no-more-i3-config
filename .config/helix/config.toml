@@ -1,0 +1,25 @@
+theme = "horizon-dark"
+[editor]
+auto-completion=true
+line-number="relative"
+bufferline="multiple"
+popup-border="all"
+auto-pairs= true
+[editor.lsp]
+enable=true
+auto-signature-help=true
+display-messages = true
+[editor.indent-guides]
+render = true
+character = "╎" # Some characters that work well: "▏", "┆", "┊", "⸽"
+skip-levels = 1
+
+[keys.normal.space]
+del = [":move ~/.Trash", ":buffer-close"]
+
+[editor.file-picker]
+hidden=true
+
+[editor.whitespace]
+render = "all"
+# or control each character
