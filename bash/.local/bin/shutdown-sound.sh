@@ -1,13 +1,21 @@
 #!/bin/bash
 
-SOUND_FILE="$HOME/.local/share/sounds/gta5_death.wav"
+SOUND_FILE="$HOME/.local/share/shutdown-sound/gta-death.wav"
 
-if [[ "$1" = "poweroff" && -f "$SOUND_FILE" ]]; then
-    paplay "$SOUND_FILE" &
-    PLAY_PID=$!
-    sleep 2
-    kill "$PLAY_PID" 2>/dev/null
-    wait "$PLAY_PID" 2>/dev/null
-fi
-
-systemctl "$@"
+case "$1" in
+    poweroff|halt)
+        if [[ -f "$SOUND_FILE" ]]; then
+            paplay "$SOUND_FILE" 2>/dev/null
+        fi
+        /usr/bin/systemctl "$@"
+        ;;
+    shutdown)
+        if [[ -f "$SOUND_FILE" ]]; then
+            paplay "$SOUND_FILE" 2>/dev/null
+        fi
+        /usr/bin/systemctl "$@"
+        ;;
+    *)
+        /usr/bin/systemctl "$@"
+        ;;
+esac
