@@ -61,7 +61,10 @@ end)
 -- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Environment-variables/
 
 hl.env("XCURSOR_SIZE", "24")
+hl.env("XCURSOR_THEME", "catppuccin-mocha-mauve-cursors")
 hl.env("HYPRCURSOR_SIZE", "24")
+hl.env("HYPRCURSOR_THEME", "catppuccin-mocha-mauve-cursors")
+hl.env("QT_QPA_PLATFORMTHEME", "qt6ct;qt5ct")
 
 
 -----------------------
@@ -366,6 +369,24 @@ hl.window_rule({
 
     move  = "20 monitor_h-120",
     float = true,
+})
+
+hl.window_rule({
+    name  = "transparent-discord",
+    match = { class = "^(discord|Discord)$" },
+    opacity = 0.85,
+})
+
+hl.window_rule({
+    name  = "transparent-spotify",
+    match = { class = "^(Spotify|spotify)$" },
+    opacity = 0.85,
+})
+
+hl.window_rule({
+    name  = "transparent-firefox",
+    match = { class = "^(firefox|Firefox|firefox-esr)$" },
+    opacity = 0.85,
 })
 
 hl.window_rule({
